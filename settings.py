@@ -1,0 +1,2 @@
+GUI = 540
+CELL_W = GUI // 9
