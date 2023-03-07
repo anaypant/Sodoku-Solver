@@ -58,7 +58,7 @@ while True:
                     pygame.display.set_caption("Congrats!")
                     game_over = True
             else:
-                print("Incorrect!")
+                pygame.display.set_caption("Incorrect!")
 
         if keyboard.is_pressed("s"):
             grid = solved_grid[:]
@@ -68,9 +68,10 @@ while True:
         for row in range(len(grid[col])):
             # color = (128, 128, 128)
             if row == selected[0] and col == selected[1]:
-                # color = (255, 0, 0)
                 pygame.draw.rect(
-                    screen, (255, 0, 0), [col * CELL_W, row * CELL_W, CELL_W, CELL_W]
+                    screen,
+                    (255, 190, 190),
+                    [col * CELL_W, row * CELL_W, CELL_W, CELL_W],
                 )
 
             elif (
@@ -79,12 +80,14 @@ while True:
                 and grid[row][col] != 0
             ):
                 pygame.draw.rect(
-                    screen, (255, 0, 160), [col * CELL_W, row * CELL_W, CELL_W, CELL_W]
+                    screen,
+                    (255, 130, 130),
+                    [col * CELL_W, row * CELL_W, CELL_W, CELL_W],
                 )
             elif row == selected[0] or col == selected[1]:
                 pygame.draw.rect(
                     screen,
-                    (255, 160, 160),
+                    (160, 160, 160),
                     [col * CELL_W, row * CELL_W, CELL_W, CELL_W],
                 )
 
